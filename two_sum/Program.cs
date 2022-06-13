@@ -13,20 +13,20 @@ namespace two_sum
             }
         }
     }
-}
 
-public class Solution
-{
-    public int[] TwoSum(int[] nums, int target)
+    public class Solution
     {
-        for (int numIndex = 0; numIndex <= nums.Length; numIndex++)
+        public int[] TwoSum(int[] nums, int target)
         {
-            int targetIndex = Array.LastIndexOf(nums, target - nums[numIndex]);
-            if (targetIndex > -1 && targetIndex != numIndex)
+            for (int numIndex = 0; numIndex <= nums.Length; numIndex++)
             {
-                return new int[] { numIndex, targetIndex };
+                int targetIndex = Array.LastIndexOf(nums, target - nums[numIndex]);
+                if (targetIndex > -1 && targetIndex != numIndex)
+                {
+                    return new int[] { numIndex, targetIndex };
+                }
             }
+            return new int[] { };
         }
-        return new int[] { };
     }
 }
